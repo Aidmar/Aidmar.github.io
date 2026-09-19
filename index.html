@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aidmar Dawlat — Full-Stack Web Developer</title>
+<meta name="description" content="Aidmar Dawlat — Full-Stack Web Developer based in Zarqa, Jordan. Angular, ASP.NET Core, Flutter. Builder of real things.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grid-field" aria-hidden="true"></div>
+<div class="glow-cursor" aria-hidden="true" id="glowCursor"></div>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">AD<span class="cursor-blink">_</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about"><span class="dim">./</span>about</a>
+      <a href="#skills"><span class="dim">./</span>skills</a>
+      <a href="#projects"><span class="dim">./</span>projects</a>
+      <a href="#contact"><span class="dim">./</span>contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">say hi →</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">./about</a>
+    <a href="#skills">./skills</a>
+    <a href="#projects">./projects</a>
+    <a href="#contact">./contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <p class="terminal-line" aria-hidden="true">
+        <span class="prompt">visitor@portfolio</span><span class="dim">:</span><span class="path">~</span><span class="dim">$</span>
+        <span id="typedCmd"></span><span class="cursor-blink">_</span>
+      </p>
+
+      <h1 class="hero-name">
+        Aidmar<br>Dawlat
+      </h1>
+
+      <p class="hero-tagline" id="heroTagline" aria-live="polite"></p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          View My Work
+        </a>
+        <a href="https://www.linkedin.com/in/aidmar-dawlat-946801331/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+          LinkedIn
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <span>Zarqa, Jordan</span>
+        <span class="meta-dot" aria-hidden="true"></span>
+        <span>Open to opportunities</span>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to about section">
+      <span>scroll</span>
+      <svg width="12" height="18" viewBox="0 0 12 18" fill="none" aria-hidden="true"><rect x="1" y="1" width="10" height="16" rx="5" stroke="currentColor" stroke-width="1.4"/><circle class="scroll-dot" cx="6" cy="6" r="1.6" fill="currentColor"/></svg>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-inner about-grid">
+      <div class="reveal">
+        <p class="eyebrow">// 01 — about</p>
+        <h2 class="section-title">Not just writing code.<br>Shipping things people use.</h2>
+
+        <div class="prose">
+          <p>I'm a full-stack developer out of Zarqa, Jordan, currently building production web apps at <strong>Mibax</strong> with Angular on the front and ASP.NET Core underneath. I like the kind of work where you own a feature end to end — schema to API to the pixel the user actually clicks.</p>
+          <p>I studied IT &amp; Cyber Security at Zarqa University (2024), which means I think about auth, roles, and edge cases a little differently than most frontend-first developers — probably a habit worth keeping.</p>
+          <p>Outside the day job, I run <strong>Merch Dungeon</strong>, a print-on-demand business across WooCommerce, Etsy, and Allegro — SEO, fulfillment, and an AI-driven content pipeline, all self-taught and self-run. I'm deep into AI tools and "vibe coding," and genuinely enjoy building side projects faster than I probably should.</p>
+          <p>When I'm not shipping, I'm competitive about it elsewhere — Rust, League of Legends, Arma. Same instinct, different scoreboard.</p>
+        </div>
+      </div>
+
+      <aside class="about-card reveal" aria-label="Quick facts">
+        <div class="card-titlebar">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <span class="filename">about.json</span>
+        </div>
+        <pre class="code-block"><code><span class="tok-punc">{</span>
+  <span class="tok-key">"role"</span><span class="tok-punc">:</span> <span class="tok-str">"Full-Stack Web Developer"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"based_in"</span><span class="tok-punc">:</span> <span class="tok-str">"Zarqa, Jordan"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"currently_at"</span><span class="tok-punc">:</span> <span class="tok-str">"Mibax"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"education"</span><span class="tok-punc">:</span> <span class="tok-str">"BSc IT / Cyber Security"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"also_running"</span><span class="tok-punc">:</span> <span class="tok-str">"Merch Dungeon"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"languages"</span><span class="tok-punc">:</span> <span class="tok-punc">[</span>
+    <span class="tok-str">"Arabic (native)"</span><span class="tok-punc">,</span>
+    <span class="tok-str">"Chechen (native)"</span><span class="tok-punc">,</span>
+    <span class="tok-str">"English (C1)"</span><span class="tok-punc">,</span>
+    <span class="tok-str">"Hungarian (basic)"</span>
+  <span class="tok-punc">],</span>
+  <span class="tok-key">"plays"</span><span class="tok-punc">:</span> <span class="tok-punc">[</span><span class="tok-str">"Rust"</span><span class="tok-punc">,</span> <span class="tok-str">"League"</span><span class="tok-punc">,</span> <span class="tok-str">"Arma"</span><span class="tok-punc">],</span>
+  <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str tok-green">"open_to_work"</span>
+<span class="tok-punc">}</span></code></pre>
+      </aside>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <p class="eyebrow reveal">// 02 — stack</p>
+      <h2 class="section-title reveal">Tools I reach for.</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card reveal">
+          <h3 class="skill-cat"><span class="cat-icon" aria-hidden="true">◧</span>Frontend</h3>
+          <div class="pill-row">
+            <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg" alt="" loading="lazy" width="16" height="16">Angular</span>
+            <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" loading="lazy" width="16" height="16">TypeScript</span>
+            <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" width="16" height="16">JavaScript</span>
+            <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" width="16" height="16">HTML/CSS</span>
+            <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="" loading="lazy" width="16" height="16">Bootstrap</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-cat"><span class="cat-icon" aria-hidden="true">◨</span>Backend</h3>
+          <div class="pill-row">
+            <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" alt="" loading="lazy" width="16" height="16">ASP.NET Core</span>
+            <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="" loading="lazy" width="16" height="16">C#</span>
+            <span class="pill">Entity Framework Core</span>
+            <span class="pill">RESTful APIs</span>
+            <span class="pill">JWT Auth</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-cat"><span class="cat-icon" aria-hidden="true">▤</span>Database</h3>
+          <div class="pill-row">
+            <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="" loading="lazy" width="16" height="16">SQL Server</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-cat"><span class="cat-icon" aria-hidden="true">◫</span>Mobile</h3>
+          <div class="pill-row">
+            <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="" loading="lazy" width="16" height="16">Flutter</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-cat"><span class="cat-icon" aria-hidden="true">✦</span>Tools &amp; Other</h3>
+          <div class="pill-row">
+            <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" loading="lazy" width="16" height="16">Git</span>
+            <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" alt="" loading="lazy" width="16" height="16">Vercel</span>
+            <span class="pill">Vibe Coding</span>
+            <span class="pill">AI Tools</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <p class="eyebrow reveal">// 03 — projects</p>
+      <h2 class="section-title reveal">Things I've built.</h2>
+
+      <div class="projects-grid">
+
+        <!-- Featured -->
+        <article class="project-card featured reveal">
+          <div class="project-top">
+            <div class="project-heading">
+              <h3>Employee Management System</h3>
+              <span class="badge-live"><span class="live-dot" aria-hidden="true"></span>Live</span>
+            </div>
+            <span class="featured-tag">Featured</span>
+          </div>
+          <p class="project-desc">A full-stack employee management platform spanning web and mobile. Role-based auth for Admins and Employees, full CRUD on staff records, a task-assignment system with priority levels, department filtering, and one-click PDF export of employee reports.</p>
+          <div class="tech-tags">
+            <span class="tag">Angular</span>
+            <span class="tag">ASP.NET Core</span>
+            <span class="tag">Flutter</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">JWT</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://employee-management-ui-omega.vercel.app/login" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              Live Demo
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card reveal">
+          <div class="project-top">
+            <div class="project-heading">
+              <h3>E-Commerce Web Application</h3>
+              <span class="badge-live"><span class="live-dot" aria-hidden="true"></span>Live</span>
+            </div>
+          </div>
+          <p class="project-desc">A full e-commerce platform built with Angular and ASP.NET Core. ASP.NET Core Identity for authentication, role-based access for Admins and Users, an admin product dashboard, and a clean RESTful API secured with JWT.</p>
+          <div class="tech-tags">
+            <span class="tag">ASP.NET Core</span>
+            <span class="tag">Angular</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">EF Core</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">JWT</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://aidmar.github.io/haha-tshirt-ui/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              Live Demo
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3 - Business -->
+        <article class="project-card business reveal">
+          <div class="project-top">
+            <div class="project-heading">
+              <h3>Merch Dungeon</h3>
+              <span class="badge-business">Business</span>
+              <span class="badge-live"><span class="live-dot" aria-hidden="true"></span>Live</span>
+            </div>
+          </div>
+          <p class="project-desc">A print-on-demand e-commerce operation I run end to end across WooCommerce, Etsy, and Allegro. SEO-optimized listings via Rank Math, fulfillment through Gelato and Printify, and an AI-driven social content pipeline (ChatGPT, ElevenLabs, CapCut) feeding an Instagram page with ~4,600 followers and viral reach.</p>
+          <div class="tech-tags">
+            <span class="tag">WooCommerce</span>
+            <span class="tag">Etsy</span>
+            <span class="tag">Allegro</span>
+            <span class="tag">Rank Math SEO</span>
+            <span class="tag">Gelato</span>
+            <span class="tag">Printify</span>
+            <span class="tag">AI Content Pipeline</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://merchdungeon.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              Visit Store
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card reveal">
+          <div class="project-top">
+            <div class="project-heading">
+              <h3>Family Grocery</h3>
+            </div>
+          </div>
+          <p class="project-desc">A Flutter mobile app that streamlines grocery shopping for families — one person submits a list, another buys it, no WhatsApp confusion. Three roles (Admin, Shopper, Buyer) each get their own dashboard: Admins manage a categorized product catalog, Shoppers build a smart cart with quantity/variant selection and custom item requests, and Buyers work through a real-time checklist with per-category progress and one-tap "check all."</p>
+          <div class="tech-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">SharedPreferences</span>
+            <span class="tag">Local Storage</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Aidmar/FamilyApp" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              View Code
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card reveal">
+          <div class="project-top">
+            <div class="project-heading">
+              <h3>Funny Noise</h3>
+            </div>
+            <span class="sub-label">Android</span>
+          </div>
+          <p class="project-desc">A personal Android soundboard — import or record short clips, organize them into color-coded categories, and fire one with a tap or straight into any chat app's share sheet. Built fully offline by construction: no backend, no account, no network code at all, with pre-warmed decoders so playback never lags.</p>
+          <div class="tech-tags">
+            <span class="tag">React Native</span>
+            <span class="tag">Expo</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Zustand</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Aidmar/funny-noise" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              View Code
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="project-card reveal">
+          <div class="project-top">
+            <div class="project-heading">
+              <h3>Restaurant Manager</h3>
+            </div>
+            <span class="sub-label">Desktop</span>
+          </div>
+          <p class="project-desc">A cross-platform desktop app for small restaurants to track ingredient stock, cost out their menu, and record sales — fully offline, no server or internet required. Batch/lot tracking with FIFO stock consumption, live cost and profit margins per menu item, low-stock and expiry alerts, and one-click backup/restore, all backed by an embedded SQLite database.</p>
+          <div class="tech-tags">
+            <span class="tag">Electron</span>
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">Tailwind CSS</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Aidmar/restaurant-manager" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              View Code
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 7 -->
+        <article class="project-card reveal">
+          <div class="project-top">
+            <div class="project-heading">
+              <h3>Personal Task App</h3>
+            </div>
+            <span class="sub-label">Flutter</span>
+          </div>
+          <p class="project-desc">A self-contained Flutter app for building a daily routine around a three-tier priority system — Must-Do, Should-Do, Nice-to-Have — with set-once repeat-daily tasks, weekly streak tracking, and scheduled reminders that fire even when the app is closed. Generates PDF weekly reports on demand, all backed by on-device SQLite with no accounts, cloud, or tracking.</p>
+          <div class="tech-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">Local Notifications</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Aidmar/personal-task-app" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              View Code
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 8 -->
+        <article class="project-card reveal">
+          <div class="project-top">
+            <div class="project-heading">
+              <h3>LotTrack</h3>
+            </div>
+            <span class="sub-label">Android</span>
+          </div>
+          <p class="project-desc">A fully offline mobile app for logging and browsing a car lot's inventory, organized as Brand → Model → Car. Camera-scanned ID numbers via on-device OCR replace manual typing, cars are grouped by sell condition for a scannable catalog, and a persistent search finds any entry by partial ID — all backed by local Hive storage with no server or account.</p>
+          <div class="tech-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Hive</span>
+            <span class="tag">ML Kit OCR</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Aidmar/LotTrack" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              View Code
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 9 -->
+        <article class="project-card reveal">
+          <div class="project-top">
+            <div class="project-heading">
+              <h3>EuLearning Platform</h3>
+            </div>
+            <span class="sub-label">ZUSecLab</span>
+          </div>
+          <p class="project-desc">An online learning platform for students to access course materials, watch video lectures, take quizzes, and submit assignments — built as part of the ZUSecLab initiative.</p>
+          <div class="tech-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">Angular</span>
+            <span class="tag">ASP.NET</span>
+          </div>
+          <div class="project-actions">
+            <span class="btn btn-ghost btn-sm btn-disabled">Details only</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact-section" id="contact">
+    <div class="section-inner contact-inner reveal">
+      <p class="eyebrow">// 04 — contact</p>
+      <h2 class="contact-title">Let's Build Something</h2>
+      <p class="contact-sub">Open to freelance, contracts, and full-time opportunities.</p>
+
+      <div class="terminal-prompt-box">
+        <span class="prompt">aidmar@dawlat</span><span class="dim">:</span><span class="path">~</span><span class="dim">$</span>
+        <span class="dim"> ./reach-out --now</span><span class="cursor-blink">_</span>
+      </div>
+
+      <div class="hero-actions contact-actions">
+        <a href="mailto:aidmar.shishani@gmail.com" class="btn btn-primary">
+          Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/aidmar-dawlat-946801331/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+          LinkedIn
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+      </div>
+
+      <p class="availability-note">Based in Zarqa, Jordan · Usually replies within a day</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <p>&copy; <span id="year"></span> Aidmar Dawlat<span class="dim">.</span> Built by hand, no template, dark mode only.</p>
+    <a href="#top" class="footer-top">back to top ↑</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
