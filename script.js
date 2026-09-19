@@ -4,6 +4,90 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ----------------------------------------------------------------
+     i18n
+  ---------------------------------------------------------------- */
+  var SUPPORTED = ['en', 'hu', 'de'];
+  var STORAGE_KEY = 'portfolio-lang';
+  var currentLang = 'en';
+  var taglineTyped = false;
+
+  function dict(lang) {
+    var all = window.I18N || {};
+    return all[lang] || all.en || {};
+  }
+
+  function t(key) {
+    var d = dict(currentLang);
+    if (d[key] != null) return d[key];
+    var en = dict('en');
+    return en[key] != null ? en[key] : '';
+  }
+
+  function detectLang() {
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
+    } catch (e) { /* storage blocked — fall through to browser language */ }
+
+    var nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    return SUPPORTED.indexOf(nav) !== -1 ? nav : 'en';
+  }
+
+  var navToggle = document.getElementById('navToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var heroTagline = document.getElementById('heroTagline');
+
+  function syncToggleLabel() {
+    if (!navToggle) return;
+    var open = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-label', t(open ? 'a11y.menuClose' : 'a11y.menuOpen'));
+  }
+
+  function applyLang(lang) {
+    currentLang = SUPPORTED.indexOf(lang) !== -1 ? lang : 'en';
+
+    document.documentElement.lang = currentLang;
+    document.title = t('meta.title');
+
+    var metaDesc = document.getElementById('metaDesc');
+    if (metaDesc) metaDesc.setAttribute('content', t('meta.desc'));
+
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      el.textContent = t(el.getAttribute('data-i18n'));
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      el.innerHTML = t(el.getAttribute('data-i18n-html'));
+    });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria')));
+    });
+
+    syncToggleLabel();
+
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      var active = btn.getAttribute('data-lang') === currentLang;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', String(active));
+    });
+
+    if (taglineTyped && heroTagline) heroTagline.textContent = t('hero.tagline');
+
+    try {
+      localStorage.setItem(STORAGE_KEY, currentLang);
+    } catch (e) { /* storage blocked — language still applies for this visit */ }
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyLang(btn.getAttribute('data-lang'));
+    });
+  });
+
+  applyLang(detectLang());
+
+  /* ----------------------------------------------------------------
      Footer year
   ---------------------------------------------------------------- */
   var yearEl = document.getElementById('year');
@@ -12,22 +96,19 @@
   /* ----------------------------------------------------------------
      Mobile menu
   ---------------------------------------------------------------- */
-  var navToggle = document.getElementById('navToggle');
-  var mobileMenu = document.getElementById('mobileMenu');
-
   if (navToggle && mobileMenu) {
     navToggle.addEventListener('click', function () {
       var open = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', String(!open));
       mobileMenu.classList.toggle('open', !open);
-      navToggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+      syncToggleLabel();
     });
 
     mobileMenu.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.setAttribute('aria-label', 'Open menu');
         mobileMenu.classList.remove('open');
+        syncToggleLabel();
       });
     });
   }
@@ -36,10 +117,7 @@
      Terminal typewriter — hero command + tagline
   ---------------------------------------------------------------- */
   var typedCmd = document.getElementById('typedCmd');
-  var heroTagline = document.getElementById('heroTagline');
-
   var CMD_TEXT = 'whoami';
-  var TAGLINE_TEXT = 'Full-Stack Developer · Vibe Coder · Builder of Real Things';
 
   function typeInto(el, text, speed, done) {
     if (!el) { if (done) done(); return; }
@@ -61,12 +139,11 @@
     })();
   }
 
-  window.addEventListener('DOMContentLoaded', function () {
-    typeInto(typedCmd, CMD_TEXT, 85, function () {
-      setTimeout(function () {
-        typeInto(heroTagline, TAGLINE_TEXT, 28);
-      }, 250);
-    });
+  typeInto(typedCmd, CMD_TEXT, 85, function () {
+    setTimeout(function () {
+      taglineTyped = true;
+      typeInto(heroTagline, t('hero.tagline'), 28);
+    }, 250);
   });
 
   /* ----------------------------------------------------------------
@@ -106,7 +183,7 @@
   }
 
   /* ----------------------------------------------------------------
-     Nav shadow / bg intensify on scroll
+     Nav border accent on scroll
   ---------------------------------------------------------------- */
   var nav = document.getElementById('nav');
   if (nav) {
