@@ -10,6 +10,7 @@
   var STORAGE_KEY = 'portfolio-lang';
   var currentLang = 'en';
   var taglineTyped = false;
+  var typeGen = 0;
 
   function dict(lang) {
     var all = window.I18N || {};
@@ -72,7 +73,10 @@
       btn.setAttribute('aria-pressed', String(active));
     });
 
-    if (taglineTyped && heroTagline) heroTagline.textContent = t('hero.tagline');
+    if (taglineTyped && heroTagline) {
+      typeGen++;
+      heroTagline.textContent = t('hero.tagline');
+    }
 
     try {
       localStorage.setItem(STORAGE_KEY, currentLang);
@@ -126,9 +130,11 @@
       if (done) done();
       return;
     }
+    var myGen = ++typeGen;
     var i = 0;
     el.textContent = '';
     (function step() {
+      if (myGen !== typeGen) return;
       if (i <= text.length) {
         el.textContent = text.slice(0, i);
         i++;
